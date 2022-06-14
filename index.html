@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
-<meta name="keywords" content="EPS, Guidelines, RESTful, API, Events, Schema">
+<meta name="keywords" content="Zalando, Guidelines, RESTful, API, Events, Schema">
 <meta name="copyright" content="CC-BY-SA 4.0">
-<title>EPS RESTful API and Event Guidelines</title>
+<title>Zalando RESTful API and Event Guidelines</title>
 <style>
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */
 /* ========================================================================== HTML5 display definitions ========================================================================== */
@@ -1387,10 +1387,10 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_zalando_restful_api_and_event_guidelines"><a class="link" href="#_zalando_restful_api_and_event_guidelines">EPS RESTful API and Event Guidelines</a></h2>
+<h2 id="_zalando_restful_api_and_event_guidelines"><a class="link" href="#_zalando_restful_api_and_event_guidelines">Zalando RESTful API and Event Guidelines</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://github.com/vsnaveen1/MyTest2">Github Repository</a> as part of
+<p><a href="https://github.com/zalando/restful-api-guidelines">Github Repository</a> as part of
 <a href="https://opensource.zalando.com/">Zalando SE Opensource</a></p>
 </div>
 <div class="imageblock">
@@ -1418,7 +1418,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#api-first">API first</a></li>
 </ul>
 </li>
-<li><a href="#general-guidelines">3. General guidelines</a>
+<li><a href="#general-guidelines">3. General guidelinessss</a>
 <ul class="sectlevel2">
 <li><a href="#100"><span class="must-keyword"><strong>MUST</strong></span> follow API first principle</a></li>
 <li><a href="#101"><span class="must-keyword"><strong>MUST</strong></span> provide API specification using OpenAPI</a></li>
@@ -1528,7 +1528,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#181"><span class="may-keyword"><strong>MAY</strong></span> consider to support <code>Prefer</code> header to handle processing preferences</a></li>
 <li><a href="#182"><span class="may-keyword"><strong>MAY</strong></span> consider to support <code>ETag</code> together with <code>If-Match</code>/<code>If-None-Match</code> header</a></li>
 <li><a href="#230"><span class="may-keyword"><strong>MAY</strong></span> consider to support <code>Idempotency-Key</code> header</a></li>
-<li><a href="#183"><span class="should-keyword"><strong>SHOULD</strong></span> use only the specified proprietary EPS headers</a></li>
+<li><a href="#183"><span class="should-keyword"><strong>SHOULD</strong></span> use only the specified proprietary Zalando headers</a></li>
 <li><a href="#184"><span class="must-keyword"><strong>MUST</strong></span> propagate proprietary headers</a></li>
 <li><a href="#233"><span class="must-keyword"><strong>MUST</strong></span> support <code>X-Flow-ID</code></a></li>
 </ul>
@@ -1661,14 +1661,14 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>EPS’s software architecture centers around decoupled microservices
+<p>Zalando’s software architecture centers around decoupled microservices
 that provide functionality via RESTful APIs with a JSON payload. Small
 engineering teams own, deploy and operate these microservices in their
 AWS (team) accounts. Our APIs most purely express what our systems do,
 and are therefore highly valuable business assets. Designing
 high-quality, long-lasting APIs has become even more critical for us
 since we started developing our new open platform strategy, which
-transforms EPS from an online shop into an expansive fashion
+transforms Zalando from an online shop into an expansive fashion
 platform. Our strategy emphasizes developing lots of public APIs for our
 external business partners to use via third-party applications.</p>
 </div>
@@ -1704,7 +1704,7 @@ ensure that our APIs:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Ideally, all EPS APIs will look like the same author created them.</p>
+<p>Ideally, all Zalando APIs will look like the same author created them.</p>
 </div>
 <div class="sect2">
 <h3 id="conventions-used-in-these-guidelines"><a class="link" href="#conventions-used-in-these-guidelines">Conventions used in these guidelines</a></h3>
@@ -1835,7 +1835,7 @@ Styles and the Design of Network-Based Software Architectures</a></p>
 <div class="sect2">
 <h3 id="api-as-a-product"><a class="link" href="#api-as-a-product">API as a product</a></h3>
 <div class="paragraph">
-<p>As mentioned above, EPS is transforming from an online shop into an
+<p>As mentioned above, Zalando is transforming from an online shop into an
 expansive fashion platform comprising a rich set of products following a
 Software as a Platform (SaaP) model for our business partners. As a
 company we want to deliver products to our (internal and external)
@@ -1980,7 +1980,7 @@ Guideline compliance), already confirmed via team internal reviews.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="general-guidelines"><a class="link" href="#general-guidelines">3. General guidelines</a></h2>
+<h2 id="general-guidelines"><a class="link" href="#general-guidelines">3. General guidelinessss</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The titles are marked with the corresponding labels: <span class="must-keyword"><strong>MUST</strong></span>,
@@ -7845,7 +7845,7 @@ events on the models created for the service’s REST API.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#general-guidelines">General guidelines</a></p>
+<p><a href="#general-guidelines">General guidelinessss</a></p>
 </li>
 <li>
 <p><a href="#data-formats">REST Basics - Data formats</a></p>
@@ -10042,7 +10042,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-14 19:55:58 UTC
+Last updated 2022-06-14 20:44:08 UTC
 </div>
 </div>
 </body>
