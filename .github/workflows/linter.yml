@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: my-step
-        run: echo ""::workflow-command parameter1={data},parameter2={data}::{command value}""
+        run: echo "::workflow-command parameter1={data},parameter2={data}::{command value}"
