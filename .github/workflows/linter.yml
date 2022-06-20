@@ -38,7 +38,7 @@ jobs:
         with:
           path: node-output/swagger123.yaml
       
-      - name: Echo swag
+#       - name: Echo swag
 #         run: echo "${{ steps.package.outputs.content }}"
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
