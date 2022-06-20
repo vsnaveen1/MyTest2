@@ -51,7 +51,7 @@ jobs:
           # Optional whether this connection use TLS (default is true if server_port is 465)
           secure: true
           # Optional plain body:
-          body: "${{steps.file_changes.outputs.files}}"
+          body: ${{steps.file_changes.outputs.files}}
           # Optional HTML body read from file:
 
           # Optional unsigned/invalid certificates allowance:
