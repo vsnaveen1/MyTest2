@@ -23,3 +23,7 @@ jobs:
 
       - name: File contents
         run: echo "${{steps.read_file.outputs}}"
+        
+      - name: File1 contents
+        run: echo "${{toJSON(steps.read_file.outputs)}}"
+
