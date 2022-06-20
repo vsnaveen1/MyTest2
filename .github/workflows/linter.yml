@@ -26,7 +26,7 @@ jobs:
       - name: test
         run: |
           cat node-output/swagger123.yaml
-          echo '${{ steps.file_changes.outputs.files}}'
+          echo 'hellow'
 
 #       - name: File contents
 #         run: echo "${{steps.read_file.outputs.content}}"
@@ -51,7 +51,7 @@ jobs:
           # Optional whether this connection use TLS (default is true if server_port is 465)
           secure: true
           # Optional plain body:
-          body: "${{steps.read_file.outputs.content}}"
+          body: "${{steps.file_changes.outputs.files}}"
           # Optional HTML body read from file:
 
           # Optional unsigned/invalid certificates allowance:
