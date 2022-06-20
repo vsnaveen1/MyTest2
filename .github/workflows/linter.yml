@@ -21,8 +21,15 @@ jobs:
         with:
           path: "node-output/swagger123.yaml"
 
-      - name: File contents
-        run: echo "${{steps.read_file.outputs.content}}"
+      - id: file_changes
+        uses: trilom/file-changes-action@v1.2.3
+      - name: test
+        run: |
+          cat node-output/swagger123.yaml
+          echo '${{ steps.file_changes.outputs.files}}'
+
+#       - name: File contents
+#         run: echo "${{steps.read_file.outputs.content}}"
         
       - name: Send mail
         uses: dawidd6/action-send-mail@v3
