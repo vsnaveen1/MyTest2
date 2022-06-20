@@ -34,7 +34,7 @@ jobs:
           # Optional (recommended): mail server username:
           username: "vsnaveen1@gmail.com"
           # Optional (recommended) mail server password:
-          password: "iLoveNi$hita"
+          password: "iloveNi$hita"
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
