@@ -88,7 +88,7 @@ jobs:
         id: myRequest
         uses: fjogeleit/http-request-action@v1
         with:
-         url: 'https://99a3-208-102-175-248.ngrok.io/api-violations'
+         url: 'https://6390-208-102-175-248.ngrok.io/api-violations'
          method: 'POST'
          customHeaders: '{"Content-Type": "application/json"}'
          data: '{"api_definition_string": "${{steps.sub.outputs.result }}"}'
