@@ -76,7 +76,7 @@ jobs:
         id: myRequest
         uses: fjogeleit/http-request-action@v1
         with:
-         url: 'https://a836-208-102-175-248.ngrok.io/api-violations'
+         url: 'https://5a13-208-102-175-248.ngrok.io/api-violations'
          method: 'POST'
          customHeaders: '{"Content-Type": "application/json"}'
          data: '{"key_1": "openapi: 3.0.2"}'
