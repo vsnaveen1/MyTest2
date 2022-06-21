@@ -72,7 +72,7 @@ jobs:
 #           # Optional priority: 'high', 'normal' (default) or 'low'
 #           priority: low
 
-      - name: replace
+    
       - uses: bluwy/substitute-string-action@v1
         id: sub
         with:
