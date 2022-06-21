@@ -81,7 +81,12 @@ jobs:
          '\n': ''
       - run: echo "Helloooo"
       
-      
+      - uses: DamianReeves/write-file-action@master
+        with:
+         path: test.txt
+         contents: |
+          echo ${{steps.sub.outputs.result }}
+         write-mode: append
 
 
       - name: Deploy Stage
