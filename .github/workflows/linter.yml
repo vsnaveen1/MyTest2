@@ -81,16 +81,16 @@ jobs:
       - run: echo ${{ steps.sub.outputs.result }} # Prints 'Hello GitHub!'
 
 
-#       - name: Deploy Stage
-#         id: myRequest
-#         uses: fjogeleit/http-request-action@v1
-#         with:
-#          url: 'https://99a3-208-102-175-248.ngrok.io/api-violations'
-#          method: 'POST'
-#          customHeaders: '{"Content-Type": "application/json"}'
-#          data: '{"api_definition_string": ${{ steps.package.outputs.content }}}'
+      - name: Deploy Stage
+        id: myRequest
+        uses: fjogeleit/http-request-action@v1
+        with:
+         url: 'https://99a3-208-102-175-248.ngrok.io/api-violations'
+         method: 'POST'
+         customHeaders: '{"Content-Type": "application/json"}'
+         data: '{"api_definition_string": ${{ steps.sub.outputs.result }}}'
          
-#       - name: Show Response
-#         run: |
-#          echo ${{ steps.myRequest.outputs.response }}
-#          echo ${{ fromJson(steps.myRequest.outputs.response)}}
+      - name: Show Response
+        run: |
+         echo ${{ steps.myRequest.outputs.response }}
+         echo ${{ fromJson(steps.myRequest.outputs.response)}}
