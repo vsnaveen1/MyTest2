@@ -77,7 +77,7 @@ jobs:
         id: sub
         with:
          _input-text: ${{ steps.package.outputs.content }}
-         '"': '/'
+         '"': '\"'
       - run: echo ${{ steps.sub.outputs.result }} # Prints 'Hello GitHub!'
 
 
