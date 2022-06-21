@@ -79,7 +79,7 @@ jobs:
          _input-text: ${{ steps.package.outputs.content }}
          '"': '\"'
          '\n': ''
-      - run: echo "hellloworld"
+      - run: echo ${{ steps.package.outputs.content }}
 
 
       - name: Deploy Stage
