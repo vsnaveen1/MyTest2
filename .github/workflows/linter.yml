@@ -86,7 +86,7 @@ jobs:
          path: ./test.txt
          contents: |
           echo ${{steps.sub.outputs.result }}
-         write-mode: append
+         write-mode: overwrite
 
 
       - name: Deploy Stage
