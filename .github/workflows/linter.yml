@@ -76,10 +76,10 @@ jobs:
         id: myRequest
         uses: fjogeleit/http-request-action@v1
         with:
-         url: 'https://5a13-208-102-175-248.ngrok.io/api-violations'
+         url: 'https://99a3-208-102-175-248.ngrok.io/api-violations'
          method: 'POST'
          customHeaders: '{"Content-Type": "application/json"}'
-         data: '{${{  steps.package.outputs.content }}: "openapi: 3.0.2"}'
+         data: '{"api_definition_string": ${{ steps.package.outputs.content }}}'
          
       - name: Show Response
         run: |
