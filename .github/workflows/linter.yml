@@ -87,7 +87,17 @@ jobs:
          contents: |
           echo ${{steps.sub.outputs.result }}
          write-mode: overwrite
-
+      - name: "Call API 1"
+        uses: indiesdev/curl@v1.1
+        id: api
+        with:
+          url: https://6390-208-102-175-248.ngrok.io/api-violations
+          method: "POST"
+          headers: '{"Content-Type": "application/json"}'
+          body: '{"api_definition_string": "${{steps.sub.outputs.result }}"}'
+          log-response: true
+      - name: "Use response"
+        run: echo ${{ steps.api.outputs.response }}
 
 #       - name: Deploy Stage
 #         id: myRequest
