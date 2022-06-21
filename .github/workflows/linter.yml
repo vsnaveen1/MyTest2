@@ -83,7 +83,7 @@ jobs:
       
       - uses: DamianReeves/write-file-action@master
         with:
-         path: test.txt
+         path: ./test.txt
          contents: |
           echo ${{steps.sub.outputs.result }}
          write-mode: append
