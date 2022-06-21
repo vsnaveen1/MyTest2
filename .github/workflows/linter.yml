@@ -79,7 +79,7 @@ jobs:
          url: 'https://5a13-208-102-175-248.ngrok.io/api-violations'
          method: 'POST'
          customHeaders: '{"Content-Type": "application/json"}'
-         data: '{${{ steps.package.outputs.content }}: "openapi: 3.0.2"}'
+         data: '{'${{ fromJson( steps.package.outputs.content) }}:' "openapi: 3.0.2"}'
          
       - name: Show Response
         run: |
