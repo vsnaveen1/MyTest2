@@ -78,6 +78,7 @@ jobs:
         with:
          _input-text: ${{ steps.package.outputs.content }}
          '"': '\"'
+         '\n': ''
       - run: echo "hellloworld"
 
 
