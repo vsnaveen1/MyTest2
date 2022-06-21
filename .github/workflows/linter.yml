@@ -77,8 +77,8 @@ jobs:
         id: sub
         with:
          _input-text: ${{ steps.package.outputs.content }}
-         '"': '\"'
-         '\n': ''
+         '\"': '\\\"'
+         '\\n': ''
       - run: echo "Helloooo"
       
       
