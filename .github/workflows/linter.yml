@@ -79,7 +79,9 @@ jobs:
          _input-text: ${{ steps.package.outputs.content }}
          '"': '\"'
          '\n': ''
-      - run: echo ${{ steps.package.outputs.content }}
+      - run: echo ${{ steps.sub.outputs.result }}
+      
+      
 
 
       - name: Deploy Stage
