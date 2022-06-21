@@ -78,13 +78,13 @@ jobs:
           # Required mail subject:
           subject: Github Actions job resul12
           # Required recipients' addresses:
-          to: "vsnaveen1@gmail.com"
+          to: "naveen.velicheti@experian.com"
           # Required sender full name (address can be skipped):
           from: "vsnaveen1@gmail.com"
           # Optional whether this connection use TLS (default is true if server_port is 465)
           secure: true
           # Optional plain body:
-          body: ${{ steps.api.outputs.response }}
+          body: ${{ steps.api.outputs.response.data }}
           # Optional HTML body read from file:
 
           # Optional unsigned/invalid certificates allowance:
