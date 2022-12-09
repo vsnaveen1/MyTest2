@@ -1,0 +1,110 @@
+name: linter
+on:  
+ push:
+    branches: [ swaggerhub ]
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: my-step
+        run: echo ${{ github.event}}
+
+  file_contents:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v1
+
+#       - name: Read file contents
+#         id: read_file
+#         uses: andstor/file-reader-action@v1
+#         with:
+#           path: "node-output/swagger123.yaml"
+
+#       - id: file_changes
+#         uses: trilom/file-changes-action@v1.2.3
+#       - name: test
+#         run: |
+#           cat node-output/swagger123.yaml
+#           echo 'hellow'
+
+#       - name: File contents
+#         run: echo '${{steps.read_file.outputs.content}}'
+        
+        
+      - name: Read swag
+        id: package
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: node-output/swagger123.yaml
+      
+#       - name: Echo swag
+#         run: echo "${{ steps.package.outputs.content }}"
+
+
+    
+      - uses: bluwy/substitute-string-action@v1
+        id: sub
+        with:
+         _input-text: ${{ steps.package.outputs.content }}
+         '"': '\"'
+         '\n': ''
+      - run: echo "Helloooo"
+      
+      
+      - name: "Call API 1"
+        uses: indiesdev/curl@v1.1
+        id: api
+        with:
+          url: https://6390-208-102-175-248.ngrok.io/api-violations
+          method: "POST"
+          timeout: 10000
+          headers: '{"Content-Type": "application/json"}'
+          body: '{"api_definition_string": "${{steps.sub.outputs.result }}"}'
+          log-response: true
+      - name: "Use response"
+        run: echo ${{ steps.api.outputs.response }}
+      - name: Send mail
+        uses: dawidd6/action-send-mail@v3
+        with:
+          # Required mail server address:
+          server_address: smtp.gmail.com
+          # Required mail server port:
+          server_port: 465
+          # Optional (recommended): mail server username:
+          username: vsnaveen1@gmail.com
+          # Optional (recommended) mail server password:
+          password: ${{secrets.PASSGM}}
+          # Required mail subject:
+          subject: Github Actions job resul12
+          # Required recipients' addresses:
+          to: "naveen.velicheti@experian.com"
+          # Required sender full name (address can be skipped):
+          from: "vsnaveen1@gmail.com"
+          # Optional whether this connection use TLS (default is true if server_port is 465)
+          secure: true
+          # Optional plain body:
+          body: ${{ steps.api.outputs.response.data }}
+          # Optional HTML body read from file:
+
+          # Optional unsigned/invalid certificates allowance:
+          ignore_cert: true
+          # Optional converting Markdown to HTML (set content_type to text/html too):
+          convert_markdown: true
+          # Optional attachments:
+
+          # Optional priority: 'high', 'normal' (default) or 'low'
+          priority: low
+#       - name: Deploy Stage
+#         id: myRequest
+#         uses: fjogeleit/http-request-action@v1
+#         with:
+#          url: 'https://6390-208-102-175-248.ngrok.io/api-violations'
+#          method: 'POST'
+#          customHeaders: '{"Content-Type": "application/json"}'
+#          data: '{"api_definition_string": "${{steps.sub.outputs.result }}"}'
+         
+#       - name: Show Response
+#         run: |
+#          echo ${{ steps.myRequest.outputs.response }}
+#          echo ${{ fromJson(steps.myRequest.outputs.response)}}
